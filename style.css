@@ -266,17 +266,17 @@ body {
 # About Section
 --------------------------------------------------------------*/
 .about-container {
-    width: 1240px;
-    margin: 140px 0;  
+    /* width: 1240px; */
+    margin-top: 140px;  
     display: grid;
-    height: 400px;
+    height: auto;
     grid-template-columns: 1fr 1fr 1fr 1.5fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 120px 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
       "desc desc desc heading"
-      "hobbies hobbies hobbies heading";
+      "hobbies hobbies hobbies -";
 }
   
 .desc { 
@@ -366,6 +366,10 @@ ul#hobbies-list {
 /*--------------------------------------------------------------
 # Experience & Education Section
 --------------------------------------------------------------*/
+#experience-sec {
+    margin-top: 150px;
+}
+
 #experience-sec-content {
     margin-top: 70px;
 }
@@ -480,7 +484,7 @@ ul#hobbies-list {
 }
 
 .skill-icon {
-    margin: 50px 50px;
+    margin: 50px 30px;
 }
 
 .skill-icon:hover {
@@ -493,6 +497,7 @@ ul#hobbies-list {
 --------------------------------------------------------------*/
 #projects-page {
     width: 100%;
+    margin-top: 150px;
 }
 
 #proj-heading {
@@ -509,7 +514,7 @@ ul#hobbies-list {
 }
 
 .position-relative:hover {
-    background-color: #EDF2FF;
+    background-color: #f2f5fd;
     cursor: pointer;
 }
 
@@ -633,9 +638,65 @@ footer {
 
 /* Apply gradient text style */
 .gradient-text {
-    background: linear-gradient(45deg, #3C6EEF, #a610fe); /* Adjust gradient colors as needed */
+    background: linear-gradient(45deg, #3C6EEF, #a610fe); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 3rem; /* Adjust font size as needed */
-    font-weight: bold; /* Optional, for emphasis */
+    font-weight: bold; 
+}
+
+/*--------------------------------------------------------------
+# Misc
+--------------------------------------------------------------*/
+/* Modal Background */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; 
+    height: 95%; 
+    overflow: hidden; 
+}
+
+.close {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background-color: #343434; 
+    color: white; 
+    border: none; 
+    border-radius: 50%;
+    width: 50px; 
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px; 
+    cursor: pointer; 
+    outline: none; 
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+    background-color: gray;
+}
+
+.pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    overflow: auto; 
 }
